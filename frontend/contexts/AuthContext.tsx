@@ -64,9 +64,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const response = await authApi.login({ email, password })
       if (response.success && response.data) {
         const { user: userData, token: tokenData } = response.data
-        // Ensure role is set (backend should provide it, but ensure it's there)
-        if (!userData.role && userData.type === 'helper') {
-          userData.role = 'helper'
+        // Ensure role is set (backend should provide it)
+        if (!userData.role) {
+          userData.role = 'user' // Default to 'user' if role is not provided
         }
         setUser(userData)
         setToken(tokenData)
