@@ -92,7 +92,7 @@ const helperSchema = new mongoose.Schema({
   timestamps: true,
 })
 
-helperSchema.index({ email: 1 })
+// Note: email index is automatically created by unique: true
 helperSchema.index({ city: 1 })
 helperSchema.index({ kycStatus: 1 })
 helperSchema.index({ verified: 1 })

@@ -72,10 +72,26 @@ This guide will help you deploy the UrbanBuddy backend to Render.
 
 ### Option A: MongoDB Atlas (Recommended)
 
-1. Create a free cluster at https://www.mongodb.com/cloud/atlas
-2. Get your connection string
-3. Replace `<password>` with your database password
-4. Add the connection string to `DATABASE_URL` in Render
+1. **Create a free cluster** at https://www.mongodb.com/cloud/atlas
+2. **Configure Network Access (CRITICAL for Render deployment)**
+   - Go to MongoDB Atlas Dashboard → Network Access
+   - Click "Add IP Address"
+   - **For Render deployment, you have two options:**
+     - **Option 1 (Recommended for Production)**: Add `0.0.0.0/0` to allow access from anywhere
+       - This allows Render's dynamic IPs to connect
+       - Your database is still protected by username/password authentication
+     - **Option 2 (More Secure)**: Add specific Render IP ranges (check Render docs for current IPs)
+   - Click "Confirm"
+   - ⚠️ **IMPORTANT**: Without this step, your Render deployment will fail with connection errors!
+3. **Get your connection string**
+   - Go to Atlas Dashboard → Database → Connect
+   - Choose "Connect your application"
+   - Copy the connection string
+   - Replace `<password>` with your database password
+   - Replace `<dbname>` with your database name (or remove it to use default)
+4. **Add the connection string to Render**
+   - In Render dashboard → Environment tab
+   - Add `DATABASE_URL` with your MongoDB connection string
 
 ### Option B: Render MongoDB
 
@@ -102,10 +118,18 @@ This guide will help you deploy the UrbanBuddy backend to Render.
 
 ### Common Issues
 
-1. **Database Connection Failed**
-   - Verify `DATABASE_URL` is correct
-   - Check MongoDB network access (whitelist Render IPs or allow all)
-   - For MongoDB Atlas: Add `0.0.0.0/0` to Network Access
+1. **Database Connection Failed / IP Whitelist Error**
+   - **This is the most common issue!**
+   - Error message: "Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted."
+   - **Solution:**
+     1. Go to MongoDB Atlas Dashboard → Network Access
+     2. Click "Add IP Address"
+     3. Add `0.0.0.0/0` (allows all IPs - safe because authentication is still required)
+     4. Click "Confirm"
+     5. Wait 1-2 minutes for changes to propagate
+     6. Redeploy your Render service
+   - Verify `DATABASE_URL` format is correct: `mongodb+srv://username:password@cluster.mongodb.net/dbname?retryWrites=true&w=majority`
+   - Ensure password is URL-encoded if it contains special characters
 
 2. **CORS Errors**
    - Verify `FRONTEND_URL` matches your frontend domain exactly

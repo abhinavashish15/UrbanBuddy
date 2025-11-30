@@ -7,12 +7,7 @@ const connectDB = async () => {
       throw new Error('DATABASE_URL is not set in environment variables')
     }
 
-    const options = {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-
-    await mongoose.connect(config.databaseUrl, options)
+    await mongoose.connect(config.databaseUrl)
     console.log('✅ MongoDB connected successfully')
     console.log(`📊 Database: ${mongoose.connection.name}`)
     console.log(`🔗 Host: ${mongoose.connection.host}`)
