@@ -2,9 +2,8 @@
 // This will be configured when backend is set up
 
 import NextAuth from 'next-auth'
-import type { NextAuthOptions } from 'next-auth'
 
-const authOptions: NextAuthOptions = {
+const handler = NextAuth({
   providers: [
     // Add providers here when backend is ready
     // CredentialsProvider, GoogleProvider, etc.
@@ -29,9 +28,7 @@ const authOptions: NextAuthOptions = {
       return session
     },
   },
-}
-
-const handler = NextAuth(authOptions)
+})
 
 export { handler as GET, handler as POST }
 
