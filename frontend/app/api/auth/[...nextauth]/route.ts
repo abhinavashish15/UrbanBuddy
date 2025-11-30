@@ -1,36 +1,22 @@
 // NextAuth API route - placeholder for backend integration
 // This will be configured when backend is set up
+// Currently disabled as the app uses AuthContext for authentication
 
-import NextAuth from 'next-auth'
+import { NextRequest, NextResponse } from 'next/server'
 
-const handler = NextAuth({
-  providers: [
-    // Add providers here when backend is ready
-    // CredentialsProvider, GoogleProvider, etc.
-  ],
-  pages: {
-    signIn: '/login',
-    signOut: '/',
-  },
-  callbacks: {
-    async jwt({ token, user }) {
-      if (user) {
-        token.role = user.role
-        token.id = user.id
-      }
-      return token
-    },
-    async session({ session, token }) {
-      if (session.user) {
-        session.user.role = token.role as string
-        session.user.id = token.id as string
-      }
-      return session
-    },
-  },
-})
+export async function GET(request: NextRequest) {
+  return NextResponse.json(
+    { message: 'NextAuth route not configured yet' },
+    { status: 501 }
+  )
+}
 
-export { handler as GET, handler as POST }
+export async function POST(request: NextRequest) {
+  return NextResponse.json(
+    { message: 'NextAuth route not configured yet' },
+    { status: 501 }
+  )
+}
 
 
 

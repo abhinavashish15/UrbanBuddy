@@ -49,8 +49,8 @@ export default function HelperDashboardPage() {
       }
       // Load data if user is a helper
       loadData()
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, authLoading, router])
 
   const loadData = async () => {
