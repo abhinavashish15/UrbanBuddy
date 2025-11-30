@@ -4,7 +4,7 @@
 import NextAuth from 'next-auth'
 import type { NextAuthOptions } from 'next-auth'
 
-export const authOptions: NextAuthOptions = {
+const authOptions: NextAuthOptions = {
   providers: [
     // Add providers here when backend is ready
     // CredentialsProvider, GoogleProvider, etc.
