@@ -344,10 +344,10 @@ export default function UserDashboardPage() {
                               <span>{formatDate(task.scheduledAt)}</span>
                             </div>
                           )}
-                          {task.location && (
+                          {task.address && (
                             <div className="flex items-center gap-2">
                               <MapPin className="h-4 w-4" />
-                              <span>{task.location}</span>
+                              <span>{task.address}</span>
                             </div>
                           )}
                           <div className="flex items-center gap-2">
