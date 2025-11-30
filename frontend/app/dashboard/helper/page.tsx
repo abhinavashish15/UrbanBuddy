@@ -286,7 +286,10 @@ export default function HelperDashboardPage() {
                       <div className="flex flex-col gap-2 ml-4">
                         <Button
                           size="sm"
-                          onClick={() => handleAcceptRequest(task._id || task.id)}
+                          onClick={() => {
+                            const taskId = task._id || task.id
+                            if (taskId) handleAcceptRequest(taskId)
+                          }}
                           className="bg-primary-600 hover:bg-primary-700"
                         >
                           Accept
@@ -294,7 +297,10 @@ export default function HelperDashboardPage() {
                         <Button
                           variant="outline"
                           size="sm"
-                          onClick={() => handleRejectRequest(task._id || task.id)}
+                          onClick={() => {
+                            const taskId = task._id || task.id
+                            if (taskId) handleRejectRequest(taskId)
+                          }}
                           className="border-gray-700 text-gray-300 hover:bg-gray-800"
                         >
                           Decline
