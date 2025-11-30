@@ -52,6 +52,7 @@ export default function UserDashboardPage() {
     if (user) {
       loadData();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   const loadData = async () => {

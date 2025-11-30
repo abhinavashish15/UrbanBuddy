@@ -52,6 +52,7 @@ export default function BookingPage() {
 
   useEffect(() => {
     loadData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [helperId, user])
 
   useEffect(() => {
@@ -114,7 +115,7 @@ export default function BookingPage() {
             <CardContent className="p-12 text-center">
               <AlertCircle className="h-12 w-12 text-red-400 mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Helper not found</h3>
-              <p className="text-gray-600 mb-4">The helper you're looking for doesn't exist</p>
+              <p className="text-gray-600 mb-4">The helper you&apos;re looking for doesn&apos;t exist</p>
               <Link href="/search">
                 <Button>Back to Search</Button>
               </Link>
@@ -276,7 +277,7 @@ export default function BookingPage() {
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                   />
                   <p className="text-xs text-gray-500 mt-1">
-                    Leave empty to use helper's hourly rate × duration
+                    Leave empty to use helper&apos;s hourly rate × duration
                   </p>
                 </div>
               </CardContent>

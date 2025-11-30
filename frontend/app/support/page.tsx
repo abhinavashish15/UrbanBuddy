@@ -62,7 +62,7 @@ export default function SupportPage() {
               </div>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h2>
               <p className="text-gray-600 mb-6">
-                We've received your message and will get back to you within 24 hours.
+                We&apos;ve received your message and will get back to you within 24 hours.
               </p>
               <Button onClick={() => setIsSubmitted(false)}>Send Another Message</Button>
             </CardContent>
@@ -78,7 +78,7 @@ export default function SupportPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Help Center</h1>
           <p className="text-lg text-gray-600">
-            We're here to help. Find answers or contact our support team.
+            We&apos;re here to help. Find answers or contact our support team.
           </p>
         </div>
 
@@ -114,7 +114,7 @@ export default function SupportPage() {
           <Card>
             <CardHeader>
               <CardTitle>Contact Us</CardTitle>
-              <CardDescription>Send us a message and we'll get back to you</CardDescription>
+              <CardDescription>Send us a message and we&apos;ll get back to you</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">

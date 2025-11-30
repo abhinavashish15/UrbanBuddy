@@ -163,7 +163,7 @@ export default function HomePage() {
             Your Trusted Partner for Seamless City Transitions
             </h1>
           <p className="mx-auto mt-6 max-w-3xl text-xl md:text-2xl text-gray-200 leading-relaxed font-light tracking-wide">
-            Connect with verified local helpers who make your move effortless. From property visits to settling in, we've got you covered.
+            Connect with verified local helpers who make your move effortless. From property visits to settling in, we&apos;ve got you covered.
             </p>
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/register">

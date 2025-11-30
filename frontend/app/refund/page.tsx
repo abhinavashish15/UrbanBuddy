@@ -41,7 +41,7 @@ export default function RefundPage() {
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-3">4. Dispute Resolution</h2>
               <p className="text-gray-700">
-                If you're not satisfied with a service, raise a dispute through your dashboard. Our admin team will review the case and determine appropriate refund amounts based on evidence provided by both parties.
+                If you&apos;re not satisfied with a service, raise a dispute through your dashboard. Our admin team will review the case and determine appropriate refund amounts based on evidence provided by both parties.
               </p>
             </section>
 

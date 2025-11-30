@@ -79,7 +79,7 @@ export default function AboutPage() {
           </CardHeader>
           <CardContent>
             <p className="text-gray-700 mb-4">
-              Whether you're moving to a new city or looking to help others in your city, UrbanBuddy is the platform for you.
+              Whether you&apos;re moving to a new city or looking to help others in your city, UrbanBuddy is the platform for you.
             </p>
             <div className="flex gap-4">
               <a href="/register" className="inline-block">

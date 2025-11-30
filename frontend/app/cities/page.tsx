@@ -42,10 +42,10 @@ export default function CitiesPage() {
         <Card className="bg-primary-50 border-primary-200">
           <CardContent className="p-8 text-center">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Don't see your city?
+              Don&apos;t see your city?
             </h2>
             <p className="text-gray-600 mb-6">
-              We're expanding rapidly! Let us know which city you'd like us to add next.
+              We&apos;re expanding rapidly! Let us know which city you&apos;d like us to add next.
             </p>
             <Link href="/support">
               <Button variant="outline">Request Your City</Button>

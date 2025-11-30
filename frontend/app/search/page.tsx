@@ -35,6 +35,7 @@ export default function SearchPage() {
 
   useEffect(() => {
     loadHelpers()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCity, selectedService, priceRange])
 
   const loadHelpers = async () => {

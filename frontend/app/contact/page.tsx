@@ -35,7 +35,7 @@ export default function ContactPage() {
               </div>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h2>
               <p className="text-gray-600 mb-6">
-                We've received your message and will get back to you within 24 hours.
+                We&apos;ve received your message and will get back to you within 24 hours.
               </p>
               <Button onClick={() => setIsSubmitted(false)}>Send Another Message</Button>
             </CardContent>
@@ -51,7 +51,7 @@ export default function ContactPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
           <p className="text-lg text-gray-600">
-            Have questions? We'd love to hear from you.
+            Have questions? We&apos;d love to hear from you.
           </p>
         </div>
 

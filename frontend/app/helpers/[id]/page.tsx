@@ -38,6 +38,7 @@ export default function HelperProfilePage() {
       loadHelper()
       loadReviews()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [helperId])
 
   const loadHelper = async () => {

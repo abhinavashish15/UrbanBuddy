@@ -65,7 +65,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-semibold text-gray-900 mb-3">6. Dispute Resolution</h2>
               <p className="text-gray-700">
-                Disputes are handled by our admin team. Both parties must provide evidence. UrbanBuddy's decision is final.
+                Disputes are handled by our admin team. Both parties must provide evidence. UrbanBuddy&apos;s decision is final.
               </p>
             </section>
 

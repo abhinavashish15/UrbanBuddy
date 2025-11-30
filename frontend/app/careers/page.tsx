@@ -86,10 +86,10 @@ export default function CareersPage() {
         <Card className="bg-primary-50 border-primary-200">
           <CardContent className="p-8 text-center">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Don't see a role that fits?
+              Don&apos;t see a role that fits?
             </h2>
             <p className="text-gray-600 mb-6">
-              We're always looking for talented people. Send us your resume and we'll keep you in mind for future opportunities.
+              We&apos;re always looking for talented people. Send us your resume and we&apos;ll keep you in mind for future opportunities.
             </p>
             <Button variant="outline">Send General Application</Button>
           </CardContent>
