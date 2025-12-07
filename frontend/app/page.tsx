@@ -429,8 +429,8 @@ export default function HomePage() {
             </Link>
             <div className="mt-8">
               <p className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-4">Or give us a call:</p>
-              <a href="tel:+919876543210" className="text-3xl font-bold hover:text-primary-400 transition-colors">
-                +91 98765 43210
+              <a href="tel:+916376506645" className="text-3xl font-bold hover:text-primary-400 transition-colors">
+                +91 6376506645
               </a>
             </div>
           </div>
@@ -438,11 +438,11 @@ export default function HomePage() {
           <div className="mt-16 grid gap-8 md:grid-cols-3 border-t border-gray-800 pt-12">
             <div className="text-center">
               <h3 className="text-lg font-semibold mb-4 text-white">Contact</h3>
-              <p className="text-gray-300 mb-2">123 Business District,</p>
-              <p className="text-gray-300 mb-4">Mumbai, Maharashtra 400001</p>
-              <a href="mailto:contact@urbanbuddy.com" className="text-primary-400 hover:text-primary-300 inline-flex items-center gap-2 transition-colors">
+              <p className="text-gray-300 mb-2">Patel Nagar,</p>
+              <p className="text-gray-300 mb-4">Patna, Bihar 800001</p>
+              <a href="mailto:abhinavashissh@gmail.com" className="text-primary-400 hover:text-primary-300 inline-flex items-center gap-2 transition-colors">
                 <Mail className="h-4 w-4" />
-                contact@urbanbuddy.com
+                abhinavashissh@gmail.com
               </a>
             </div>
             <div className="text-center">
@@ -457,7 +457,7 @@ export default function HomePage() {
             </div>
             <div className="text-center">
               <h3 className="text-lg font-semibold mb-4 text-white">Get Started</h3>
-              <p className="text-2xl font-bold mb-2">+91 98765 43210</p>
+              <p className="text-2xl font-bold mb-2">+91 6376506645</p>
               <p className="text-sm text-gray-400">Available 24/7</p>
             </div>
           </div>
