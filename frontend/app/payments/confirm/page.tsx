@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic'
 
-import { useEffect } from 'react'
+import { useEffect, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -10,7 +10,7 @@ import { CheckCircle, ArrowRight, Download } from 'lucide-react'
 import Link from 'next/link'
 import { formatCurrency } from '@/lib/utils'
 
-export default function PaymentConfirmPage() {
+function PaymentConfirmContent() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const type = searchParams.get('type')
@@ -82,6 +82,18 @@ export default function PaymentConfirmPage() {
         </Card>
       </div>
     </div>
+  )
+}
+
+export default function PaymentConfirmPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="h-8 w-8 border-4 border-gray-300 border-t-gray-600 rounded-full animate-spin" />
+      </div>
+    }>
+      <PaymentConfirmContent />
+    </Suspense>
   )
 }
 

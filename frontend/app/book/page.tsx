@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -27,7 +27,7 @@ import { helpersApi } from '@/lib/api/helpers'
 import { paymentsApi } from '@/lib/api/payments'
 import type { Helper } from '@/types'
 
-export default function BookingPage() {
+function BookingForm() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const { user } = useAuth()
@@ -345,5 +345,17 @@ export default function BookingPage() {
         </form>
       </div>
     </div>
+  )
+}
+
+export default function BookingPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="h-8 w-8 border-4 border-gray-300 border-t-gray-600 rounded-full animate-spin" />
+      </div>
+    }>
+      <BookingForm />
+    </Suspense>
   )
 }

@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -12,7 +12,7 @@ import Link from 'next/link'
 import { SUBSCRIPTION_PLANS } from '@/lib/constants'
 import { formatCurrency } from '@/lib/utils'
 
-export default function SubscribePage() {
+function SubscribeForm() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const redirect = searchParams.get('redirect')
@@ -117,6 +117,18 @@ export default function SubscribePage() {
         </Card>
       </div>
     </div>
+  )
+}
+
+export default function SubscribePage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="h-8 w-8 border-4 border-gray-300 border-t-gray-600 rounded-full animate-spin" />
+      </div>
+    }>
+      <SubscribeForm />
+    </Suspense>
   )
 }
 

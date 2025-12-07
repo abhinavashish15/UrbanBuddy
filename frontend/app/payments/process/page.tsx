@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -11,7 +11,7 @@ import { CreditCard, Lock, Loader2 } from 'lucide-react'
 import { SUBSCRIPTION_PLANS } from '@/lib/constants'
 import { formatCurrency } from '@/lib/utils'
 
-export default function PaymentProcessPage() {
+function PaymentProcessForm() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const type = searchParams.get('type')
@@ -158,6 +158,18 @@ export default function PaymentProcessPage() {
         </Card>
       </div>
     </div>
+  )
+}
+
+export default function PaymentProcessPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="h-8 w-8 border-4 border-gray-300 border-t-gray-600 rounded-full animate-spin" />
+      </div>
+    }>
+      <PaymentProcessForm />
+    </Suspense>
   )
 }
 

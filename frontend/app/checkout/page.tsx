@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -18,7 +18,7 @@ import {
 import Link from 'next/link'
 import { formatCurrency } from '@/lib/utils'
 
-export default function CheckoutPage() {
+function CheckoutForm() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const helperId = searchParams.get('helperId')
@@ -257,6 +257,18 @@ export default function CheckoutPage() {
         </form>
       </div>
     </div>
+  )
+}
+
+export default function CheckoutPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="h-8 w-8 border-4 border-gray-300 border-t-gray-600 rounded-full animate-spin" />
+      </div>
+    }>
+      <CheckoutForm />
+    </Suspense>
   )
 }
 
