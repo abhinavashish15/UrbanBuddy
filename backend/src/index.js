@@ -12,10 +12,10 @@ const startServer = async () => {
   try {
     // Connect to database
     await connectDB()
-    
+
     // Start server only after database connection
     const PORT = config.port
-    
+
     app.listen(PORT, () => {
       console.log(`🚀 Server running on http://localhost:${PORT}`)
       console.log(`📝 Environment: ${config.nodeEnv}`)
@@ -28,8 +28,24 @@ const startServer = async () => {
 }
 
 // Middleware
+// Normalize frontend URL (remove trailing slash)
+const normalizedFrontendUrl = config.frontendUrl?.replace(/\/$/, '')
+
 app.use(cors({
-  origin: config.frontendUrl,
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true)
+
+    // Normalize origin (remove trailing slash)
+    const normalizedOrigin = origin.replace(/\/$/, '')
+
+    // Check if origin matches (with or without trailing slash)
+    if (normalizedOrigin === normalizedFrontendUrl || origin === normalizedFrontendUrl) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  },
   credentials: true,
 }))
 app.use(express.json())
