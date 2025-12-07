@@ -1,27 +1,35 @@
-'use client'
+/** @format */
 
-import { useState } from 'react'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Shield, Mail, ArrowLeft, CheckCircle } from 'lucide-react'
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Shield, Mail, ArrowLeft, CheckCircle } from "lucide-react";
 
 export default function ForgotPasswordPage() {
-  const [email, setEmail] = useState('')
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const [email, setEmail] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-    
+    e.preventDefault();
+    setIsLoading(true);
+
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    setIsSubmitted(true)
-    setIsLoading(false)
-  }
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    setIsSubmitted(true);
+    setIsLoading(false);
+  };
 
   if (isSubmitted) {
     return (
@@ -34,9 +42,12 @@ export default function ForgotPasswordPage() {
                   <CheckCircle className="h-10 w-10 text-green-600" />
                 </div>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Check your email</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                Check your email
+              </h2>
               <p className="text-gray-600 mb-6">
-                We&apos;ve sent a password reset link to <strong>{email}</strong>
+                We&apos;ve sent a password reset link to{" "}
+                <strong>{email}</strong>
               </p>
               <Link href="/login">
                 <Button variant="outline">Back to Sign In</Button>
@@ -45,7 +56,7 @@ export default function ForgotPasswordPage() {
           </Card>
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -67,7 +78,8 @@ export default function ForgotPasswordPage() {
             </div>
             <CardTitle>Reset your password</CardTitle>
             <CardDescription>
-              Enter your email address and we&apos;ll send you a link to reset your password
+              Enter your email address and we&apos;ll send you a link to reset
+              your password
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -89,13 +101,21 @@ export default function ForgotPasswordPage() {
                 </div>
               </div>
 
-              <Button type="submit" className="w-full" size="lg" disabled={isLoading}>
-                {isLoading ? 'Sending...' : 'Send reset link'}
+              <Button
+                type="submit"
+                className="w-full"
+                size="lg"
+                disabled={isLoading}
+              >
+                {isLoading ? "Sending..." : "Send reset link"}
               </Button>
             </form>
 
             <div className="mt-6 text-center">
-              <Link href="/login" className="text-sm text-primary-600 hover:text-primary-500">
+              <Link
+                href="/login"
+                className="text-sm text-primary-600 hover:text-primary-500"
+              >
                 Back to sign in
               </Link>
             </div>
@@ -103,11 +123,5 @@ export default function ForgotPasswordPage() {
         </Card>
       </div>
     </div>
-  )
+  );
 }
-
-
-
-
-
-

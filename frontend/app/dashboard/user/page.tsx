@@ -192,8 +192,10 @@ export default function UserDashboardPage() {
                     {upcomingTasks.length}
                   </p>
                   <p className="text-xs text-gray-500 mt-1">
-                    {upcomingTasks.filter((t) => t.status === "in_progress")
-                      .length}{" "}
+                    {
+                      upcomingTasks.filter((t) => t.status === "in_progress")
+                        .length
+                    }{" "}
                     in progress
                   </p>
                 </div>
@@ -427,7 +429,9 @@ export default function UserDashboardPage() {
                           {task.completedAt && (
                             <div className="flex items-center gap-2">
                               <CheckCircle className="h-4 w-4 text-green-400" />
-                              <span>Completed: {formatDate(task.completedAt)}</span>
+                              <span>
+                                Completed: {formatDate(task.completedAt)}
+                              </span>
                             </div>
                           )}
                           <div className="flex items-center gap-2">
@@ -572,9 +576,7 @@ export default function UserDashboardPage() {
                     </div>
                     <div className="flex items-center gap-2 text-sm text-gray-400">
                       <Calendar className="h-4 w-4" />
-                      <span>
-                        Expires on {formatDate(subscription.endDate)}
-                      </span>
+                      <span>Expires on {formatDate(subscription.endDate)}</span>
                     </div>
                   </div>
                   <div className="flex gap-4">
